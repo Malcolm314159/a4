@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('/tunes', function () {
+    return view('tunes');
+});
+Route::get('/addtune', function () {
+    return view('addtune');
+});
+Route::get('/types', function () {
+    return view('types');
 });
