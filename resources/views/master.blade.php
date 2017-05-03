@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Folk Tune Library Testing</title>
+    <title>Folk Tune Library</title>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/slate/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/a4.css"/>
 </head>
