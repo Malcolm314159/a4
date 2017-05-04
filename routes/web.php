@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/search', 'MainController@search');
 Route::get('/tunes', 'MainController@allTunes');
 
 Route::get('/addtune', function () {
