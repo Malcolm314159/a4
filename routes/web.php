@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/search', 'MainController@search');
 Route::get('/tunes', 'MainController@allTunes');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::get('/addtune', function () {
     return view('addtune');
