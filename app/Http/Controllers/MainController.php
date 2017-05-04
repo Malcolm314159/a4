@@ -18,11 +18,8 @@ class MainController extends Controller
         ]);
 
         $searchTerm = $request->input('searchTerm');
-
         $tunes = Tune::where('name', 'LIKE', $searchTerm)->get();
 
-        dd($tunes);
-
-
+        return view('searchResults', $tunes);
     }
 }
