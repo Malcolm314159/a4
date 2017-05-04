@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/tunes', 'TuneController@allTunes');
+Route::get('/tunes', 'MainController@allTunes');
 
 Route::get('/addtune', function () {
     return view('addtune');

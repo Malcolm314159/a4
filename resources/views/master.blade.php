@@ -17,8 +17,8 @@
             <li><a href="/addtune">Add Tune</a></li>
             <li><a href="/types">Tune Types</a></li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
-            <input type="text" id="search" class="form-control" placeholder="Tune Name">
+        <form class="navbar-form navbar-left" role="search" method="get" action="/search">
+            <input type="text" id="searchTerm" class="form-control" placeholder="Tune Name" required>
             <button type="submit" class="btn btn-default">Search</button>
         </form>
     </nav>
