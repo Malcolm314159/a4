@@ -13,13 +13,15 @@ class MainController extends Controller
     }
     function search(Request $request) {
 
-        $this->validate($request, [
-            'searchTerm' => 'required',
-        ]);
+        $this->validate($request, []);
 
         $searchTerm = $request->input('searchTerm');
         $tunes = Tune::where('name', 'LIKE', $searchTerm)->get();
 
-        return view('searchResults', $tunes);
+        return view('searchResults')->with('tunes', $tunes);
+    }
+    function search2() {
+        $tunes = Tune::where('name', 'LIKE', 'Swallowtail Jig')->get();
+        return view('searchResults')->with('tunes', $tunes);
     }
 }

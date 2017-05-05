@@ -14,17 +14,17 @@
 Route::get('/', function () {
     return view('home');
 });
-
-Route::get('/search', 'MainController@search');
-Route::get('/tunes', 'MainController@allTunes');
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-
-Route::get('/addtune', function () {
+Route::get('addtune', function () {
     return view('addtune');
 });
-Route::get('/types', function () {
+Route::get('types', function () {
     return view('types');
 });
+
+Route::get('search', 'MainController@search');
+Route::get('tunes', 'MainController@allTunes');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('search2', 'MainController@search2');
 
 if(App::environment('local')) {
 
