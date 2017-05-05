@@ -22,11 +22,11 @@
     what tunes I know!
 </p>
 
-<h4 id="featuredTune">Featured Tune</h4>
-<ul class="tune">
-    <li class="name">Frank's Reel</li>
-    <li>Reel</li>
-    <li>A Major</li>
+<h3 class="featured">Featured Tune (random)</h3>
+<ul class='tune'>
+    <li class='name'>{{ $featuredTune->name }}</li>
+    <li>{{ $featuredTune->type_id }}</li>
+    <li>{{$featuredTune->key}} {{$featuredTune->mode}}</li>
 </ul>
 
 @endsection
