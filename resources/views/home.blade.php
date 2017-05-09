@@ -22,11 +22,16 @@
     what tunes I know!
 </p>
 
+@if ($featuredTune != NULL)
 <h3 class="featured">Featured Tune (random)</h3>
 <ul class='tune'>
     <li class='name'>{{ $featuredTune->name }}</li>
-    <li>{{ $featuredTune->type_id }}</li>
-    <li>{{$featuredTune->key}} {{$featuredTune->mode}}</li>
+    <li>{{$featuredTune->kee}} {{$featuredTune->mode}}</li>
+    <li>{{ $featuredTune->type->name }}</li>
+    @if ($featuredTune->resource != NULL)
+    <li><a href="{{$featuredTune->resource}}" target="_blank">
+        External Resource</a></li>
+    @endif
 </ul>
-
+@endif
 @endsection

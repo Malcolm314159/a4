@@ -1,22 +1,22 @@
 @extends('master')
 @section('content')
-<form class="form-horizontal well bs-component">
+<form class="form-horizontal well bs-component" method='get' action='/processNewTune'>
     <fieldset>
         <legend>Add Tune</legend>
         <div class="form-group">
             <label for="name" class="col-lg-2 control-label">Name</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="name" placeholder="Tune Name">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Tune Name">
             </div>
         </div>
 
         <div class="form-group">
             <label for="type" class="col-lg-2 control-label">Type</label>
             <div class="col-lg-10">
-                <select multiple="" class="form-control" id="type">
-                    <option>Jig</option>
-                    <option>Reel</option>
-                    <option>Waltz</option>
+                <select multiple="" class="form-control" id="type_id" name="type_id">
+                    @foreach ($types as $type)
+                    <option value={{ $type->id }}>{{ $type->name }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -24,28 +24,28 @@
         <div class="form-group">
             <label for="key" class="col-lg-2 control-label">Key</label>
             <div class="col-lg-10">
-                <select class="form-control" id="key">
-                    <option value="a">A</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
-                    <option value="e">E</option>
-                    <option value="f">F</option>
-                    <option value="g">G</option>
-                    <option value="a-sharp">A-sharp</option>
-                    <option value="b-sharp">B-sharp</option>
-                    <option value="c-sharp">C-sharp</option>
-                    <option value="d-sharp">D-sharp</option>
-                    <option value="e-sharp">E-sharp</option>
-                    <option value="f-sharp">F-sharp</option>
-                    <option value="g-sharp">G-sharp</option>
-                    <option value="a-flat">A-flat</option>
-                    <option value="b-flat">B-flat</option>
-                    <option value="c-flat">C-flat</option>
-                    <option value="d-flat">D-flat</option>
-                    <option value="e-flat">E-flat</option>
-                    <option value="f-flat">F-flat</option>
-                    <option value="g-flat">G-flat</option>
+                <select class="form-control" id="kee" name="kee">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="A-sharp">A-sharp</option>
+                    <option value="B-sharp">B-sharp</option>
+                    <option value="C-sharp">C-sharp</option>
+                    <option value="D-sharp">D-sharp</option>
+                    <option value="E-sharp">E-sharp</option>
+                    <option value="F-sharp">F-sharp</option>
+                    <option value="G-sharp">G-sharp</option>
+                    <option value="A-flat">A-flat</option>
+                    <option value="B-flat">B-flat</option>
+                    <option value="C-flat">C-flat</option>
+                    <option value="D-flat">D-flat</option>
+                    <option value="E-flat">E-flat</option>
+                    <option value="F-flat">F-flat</option>
+                    <option value="G-flat">G-flat</option>
                 </select>
             </div>
         </div>
@@ -55,49 +55,49 @@
             <div class="col-lg-10">
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="major" value="major">
+                        <input type="radio" name="mode" id="mode" value="Major">
                         Major
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="minor" value="minor">
+                        <input type="radio" name="mode" id="mode" value="Minor">
                         Minor
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="dorian" value="dorian">
+                        <input type="radio" name="mode" id="mode" value="Dorian">
                         Dorian
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="mixolydian" value="mixolydian">
+                        <input type="radio" name="mode" id="mode" value="Mixolydian">
                         Mixolydian
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="lydian" value="lydian">
+                        <input type="radio" name="mode" id="mode" value="Lydian">
                         Lydian
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="phrygian" value="phrygian">
+                        <input type="radio" name="mode" id="mode" value="Phrygian">
                         Phrygian
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="locrian" value="locrian">
+                        <input type="radio" name="mode" id="mode" value="Locrian">
                         Locrian
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="mode" id="freygish" value="freygish">
+                        <input type="radio" name="mode" id="mode" value="Freygish">
                         Freygish
                     </label>
                 </div>

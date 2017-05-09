@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTunesTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateTunesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tunes', function (blueprint $table) {
-
+        Schema::create('types', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->integer('type_id')->unsigned();
-            $table->string('kee');
-            $table->string('mode');
-            $table->string('resource')->nullable();
         });
     }
 
@@ -32,6 +27,6 @@ class CreateTunesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tunes');
+        Schema::drop('types');
     }
 }

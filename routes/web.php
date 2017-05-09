@@ -11,18 +11,22 @@
 |
 */
 
-Route::get('addtune', function () {
-    return view('addtune');
-});
-Route::get('types', function () {
-    return view('types');
-});
 
-Route::Get('/', 'MainController@home');
-Route::get('search', 'MainController@search');
+
+Route::get('/', 'MainController@home');
 Route::get('tunes', 'MainController@allTunes');
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('addtune', 'MainController@addTune');
+Route::get('types', 'MainController@types');
+Route::get('search', 'MainController@search');
 
+Route::get('processNewTune', 'MainController@processNewTune');
+Route::post('processNewType', 'MainController@processNewType');
+Route::get('/delete/{id}', 'MainController@processTuneDeletion');
+Route::get('/edit/{id}', 'MainController@edit');
+
+
+#Development Routes
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 if(App::environment('local')) {
 
     Route::get('/drop', function() {
@@ -30,11 +34,10 @@ if(App::environment('local')) {
         DB::statement('DROP database a4db');
         DB::statement('CREATE database a4db');
 
-        return 'Dropped tune library; created tune library.';
+        return 'Dropped a4db; created a4db.';
     });
 
 };
-
 Route::get('/debug', function() {
 
 	echo '<pre>';
