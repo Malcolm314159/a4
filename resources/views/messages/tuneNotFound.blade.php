@@ -1,4 +1,4 @@
 @extends('master')
 @section('content')
-<h3>Your type has been added.</h3>
+<h3>Tune not found.</h3>
 @endsection

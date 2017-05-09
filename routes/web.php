@@ -21,6 +21,7 @@ Route::get('search', 'MainController@search');
 
 Route::get('processNewTune', 'MainController@processNewTune');
 Route::post('processNewType', 'MainController@processNewType');
+
 Route::get('/delete/{id}', 'MainController@processTuneDeletion');
 Route::get('/edit/{id}', 'MainController@edit');
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <title>Folk Tune Library</title>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/slate/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/a4.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/a4.css') }}"/>
 </head>
 <body>
 

@@ -18,7 +18,7 @@ class MainController extends Controller
     }
     function addTune() {
         $types = Type::all();
-        return view('addtune')->with('types', $types);
+        return view('addTune')->with('types', $types);
     }
     function processNewTune(Request $request) {
         $this->validate($request, []);
@@ -62,6 +62,16 @@ class MainController extends Controller
         else {
             $tune->delete();
             return view('messages.tuneDeleted');
+        }
+    }
+    function edit($id) {
+        $tune = Tune::find($id);
+        if (!$tune) {
+            return view('messages.tuneNotFound');
+        }
+        else {
+            $types = Type::all();
+            return view('editTune')->with('tune', $tune)->with('types', $types);
         }
     }
 }
