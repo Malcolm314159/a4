@@ -8,9 +8,10 @@
             These types will be an important classification system
             for your tunes! </p>
         @else
+        <p>Click to edit</p>
         <ul>
         @foreach ($types as $type)
-            <li>{{ $type->name }}</li>
+            <li><a href='edittype/{{ $type->id }}'>{{ $type->name }}</a></li>
         @endforeach
         </ul>
         @endif

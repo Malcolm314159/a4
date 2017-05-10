@@ -18,6 +18,7 @@
                     External Resource</a></li>
                 @endif
                 <li><a href='/delete/{{ $tune->id }}'>Delete</a></li>
+                <li><a href='/edit/{{ $tune->id }}'>Edit</a></li>
             </ul>
         </li>
     @endforeach

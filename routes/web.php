@@ -14,16 +14,20 @@
 
 
 Route::get('/', 'MainController@home');
-Route::get('tunes', 'MainController@allTunes');
-Route::get('addtune', 'MainController@addTune');
-Route::get('types', 'MainController@types');
+Route::get('tunes', 'TuneController@allTunes');
+Route::get('addtune', 'TuneController@addTune');
+Route::get('types', 'TypeController@types');
 Route::get('search', 'MainController@search');
 
-Route::get('processNewTune', 'MainController@processNewTune');
-Route::post('processNewType', 'MainController@processNewType');
+Route::post('processNewTune', 'TuneController@processNewTune');
+Route::get('/delete/{id}', 'TuneController@processTuneDeletion');
+Route::get('/edit/{id}', 'TuneController@edit');
+Route::post('processTuneEdits', 'TuneController@processTuneEdits');
 
-Route::get('/delete/{id}', 'MainController@processTuneDeletion');
-Route::get('/edit/{id}', 'MainController@edit');
+Route::post('processNewType', 'TypeController@processNewType');
+Route::get('/edittype/{id}', 'TypeController@editType');
+Route::post('processTypeEdits', 'TypeController@processTypeEdits');
+
 
 
 #Development Routes
