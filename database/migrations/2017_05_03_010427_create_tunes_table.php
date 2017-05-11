@@ -18,7 +18,6 @@ class CreateTunesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->integer('type_id')->unsigned();
             $table->string('kee');
             $table->string('mode');
             $table->string('resource')->nullable();

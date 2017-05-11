@@ -15,11 +15,15 @@
             <div class="col-lg-10">
                 <select multiple="" class="form-control" id="type_id" name="type_id">
                     @foreach ($types as $type)
-                    <option value={{ $type->id }}
-                        @if ($type->id == $tune->type->id)
-                            selected
-                        @endif
-                        >{{ $type->name }}</option>
+                    <div class='checkbox'>
+                        <label>
+                            <input type='checkbox' value='{{ $type->id }}' id='type_{{ $type->id }}' name='types[]'
+                            @if ($tune->types->contains($type))
+                            checked
+                            @endif
+                            >{{ $type->name }}</input>
+                        </label>
+                    </div>
                     @endforeach
                 </select>
             </div>

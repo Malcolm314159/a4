@@ -27,8 +27,12 @@ class TuneController extends Controller
     }
 
     function allTunes() {
-        $tunes = Tune::with('type')->get();
+        $tunes = Tune::all();
         return view('tunes')->with('tunes', $tunes);
+    }
+    function tuneNames() {
+        $tunes = Tune::all();
+        return view('tuneNames')->with('tunes', $tunes);
     }
     function addTune() {
         $types = Type::all();
@@ -41,14 +45,21 @@ class TuneController extends Controller
         ->with('modes', $modes);
     }
     function processNewTune(Request $request) {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
         $tune = new Tune();
         $tune->name = $request->input('name');
-        $tune->type_id = $request->input('type_id');
         $tune->kee = $request->input('kee');
         $tune->mode = $request->input('mode');
         $tune->resource = $request->input('resource');
         $tune->save();
+
+        $types = ($request->types) ?: [];
+        $tune->types()->sync($types);
+        $tune->save();
+
         return view('messages.tuneAdded');
     }
     function edit($id) {
@@ -72,11 +83,14 @@ class TuneController extends Controller
         $this->validate($request, []);
         $tune = Tune::find($request->input('id'));
         $tune->name = $request->input('name');
-        $tune->type_id = $request->input('type_id');
         $tune->kee = $request->input('kee');
         $tune->mode = $request->input('mode');
         $tune->resource = $request->input('resource');
+
+        $types = ($request->types) ?: [];
+        $tune->types()->sync($types);
         $tune->save();
+
         return view('messages.tuneUpdated');
     }
     function processTuneDeletion($id) {

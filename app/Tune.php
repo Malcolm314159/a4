@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tune extends Model
 {
-    public function type() {
-        return $this->belongsTo('App\Type');
+    public function types() {
+        return $this->belongsToMany('App\Type')->withTimestamps();
     }
 }

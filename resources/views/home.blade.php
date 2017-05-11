@@ -27,7 +27,15 @@
 <ul class='tune'>
     <li class='name'>{{ $featuredTune->name }}</li>
     <li>{{$featuredTune->kee}} {{$featuredTune->mode}}</li>
-    <li>{{ $featuredTune->type->name }}</li>
+
+    @if (count($featuredTune->types) > 0)
+    <li>
+    @foreach ($featuredTune->types as $type)
+    {{ $type->name }}
+    @endforeach
+    </li>
+    @endif
+
     @if ($featuredTune->resource != NULL)
     <li><a href="{{$featuredTune->resource}}" target="_blank">
         External Resource</a></li>

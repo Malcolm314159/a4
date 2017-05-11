@@ -2,13 +2,13 @@
 @section('content')
 
 <h2>Tunes</h2>
-<a href='tuneNames'>View names only</a>
+<a href='tunes'>View full info</a>
 @if (count($tunes) == 0)
     <p>Database empty</p>
 @else
 <ul>
     @foreach($tunes as $tune)
-        @include('tuneMarkup')
+        <li>{{ $tune->name }}</li>
     @endforeach
 </ul>
 @endif

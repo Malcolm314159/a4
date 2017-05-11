@@ -15,6 +15,7 @@
 
 Route::get('/', 'MainController@home');
 Route::get('tunes', 'TuneController@allTunes');
+Route::get('tuneNames', 'TuneController@tuneNames');
 Route::get('addtune', 'TuneController@addTune');
 Route::get('types', 'TypeController@types');
 Route::get('search', 'MainController@search');
