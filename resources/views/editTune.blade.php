@@ -13,19 +13,17 @@
         <div class="form-group">
             <label for="type" class="col-lg-2 control-label">Type</label>
             <div class="col-lg-10">
-                <select multiple="" class="form-control" id="type_id" name="type_id">
-                    @foreach ($types as $type)
-                    <div class='checkbox'>
-                        <label>
-                            <input type='checkbox' value='{{ $type->id }}' id='type_{{ $type->id }}' name='types[]'
-                            @if ($tune->types->contains($type))
-                            checked
-                            @endif
-                            >{{ $type->name }}</input>
-                        </label>
-                    </div>
-                    @endforeach
-                </select>
+                @foreach ($types as $type)
+                <div class='checkbox'>
+                    <label>
+                        <input type='checkbox' value='{{ $type->id }}' id='type_{{ $type->id }}' name='types[]'
+                        @if ($tune->types->contains($type))
+                        checked
+                        @endif
+                        >{{ $type->name }}</input>
+                    </label>
+                </div>
+                @endforeach
             </div>
         </div>
 
@@ -34,11 +32,11 @@
             <div class="col-lg-10">
                 <select class="form-control" id="kee" name="kee">
                     @foreach ($kees as $kee)
-                        <option value='{{ $kee }}'
-                        @if ($kee == $tune->kee)
-                            selected
-                        @endif
-                        >{{ $kee }}</option>
+                    <option value='{{ $kee }}'
+                    @if ($kee == $tune->kee)
+                    selected
+                    @endif
+                    >{{ $kee }}</option>
                     @endforeach
                 </select>
             </div>
@@ -48,16 +46,16 @@
             <label class="col-lg-2 control-label">Mode</label>
             <div class="col-lg-10">
                 @foreach ($modes as $mode)
-                    <div class='radio'>
-                        <label>
-                            <input type='radio' name='mode'
-                            id='mode' value='{{$mode}}'
-                            @if ($mode == $tune->mode)
-                                checked
-                            @endif
-                            >{{ $mode }}
-                        </label>
-                    </div>
+                <div class='radio'>
+                    <label>
+                        <input type='radio' name='mode'
+                        id='mode' value='{{$mode}}'
+                        @if ($mode == $tune->mode)
+                        checked
+                        @endif
+                        >{{ $mode }}
+                    </label>
+                </div>
                 @endforeach
             </div>
         </div>
