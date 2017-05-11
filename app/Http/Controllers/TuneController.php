@@ -34,12 +34,12 @@ class TuneController extends Controller
         $tunes = Tune::all();
         return view('tuneNames')->with('tunes', $tunes);
     }
-    function addTune() {
+    function addtune() {
         $types = Type::all();
         $kees = $this->kees;
         $modes = $this->modes;
 
-        return view('addTune')
+        return view('addtune')
         ->with('types', $types)
         ->with('kees', $kees)
         ->with('modes', $modes);
