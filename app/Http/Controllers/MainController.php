@@ -13,7 +13,9 @@ class MainController extends Controller
         return view('home')->with('featuredTune', $featuredTune);
     }
     function search(Request $request) {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'searchTerm' => 'required'
+        ]);
         $searchTerm = $request->input('searchTerm');
         $tunes = Tune::where('name', 'LIKE', '%'.$searchTerm.'%')->get();
         return view('searchResults')->with('tunes', $tunes);

@@ -48,7 +48,6 @@ class TuneController extends Controller
         $this->validate($request, [
             'name' => 'required'
         ]);
-
         $tune = new Tune();
         $tune->name = $request->input('name');
         $tune->kee = $request->input('kee');
@@ -80,7 +79,9 @@ class TuneController extends Controller
         }
     }
     function processTuneEdits(Request $request) {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
         $tune = Tune::find($request->input('id'));
         $tune->name = $request->input('name');
         $tune->kee = $request->input('kee');

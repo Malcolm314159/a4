@@ -7,9 +7,9 @@
     <fieldset>
         <legend>Add Tune</legend>
         <div class="form-group">
-            <label for="name" class="col-lg-2 control-label">Name</label>
+            <label for="name" class="col-lg-2 control-label">Name*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Tune Name">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Tune Name" required>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group">
-            <label for="key" class="col-lg-2 control-label">Key</label>
+            <label for="key" class="col-lg-2 control-label">Key*</label>
             <div class="col-lg-10">
                 <select class="form-control" id="kee" name="kee">
                     @foreach ($kees as $kee)
@@ -39,13 +39,17 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Mode</label>
+            <label class="col-lg-2 control-label">Mode*</label>
             <div class="col-lg-10">
                 @foreach ($modes as $mode)
                 <div class='radio'>
                     <label>
                         <input type='radio' name='mode'
-                        id='mode' value='{{$mode}}'>{{ $mode }}
+                        id='mode' value='{{$mode}}'
+                        @if ($mode == 'Major')
+                        checked
+                        @endif
+                        >{{ $mode }}
                     </label>
                 </div>
                 @endforeach
@@ -55,7 +59,7 @@
         <div class="form-group">
             <label for="resource" class="col-lg-2 control-label">Resource URL</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" name="resource" id="resource" placeholder="http://...">
+                <input type="url" class="form-control" name="resource" id="resource" placeholder="http://...">
             </div>
         </div>
 

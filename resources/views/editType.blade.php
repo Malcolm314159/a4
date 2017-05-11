@@ -6,7 +6,7 @@
         <div class="form-group">
             <label for="name" class="col-lg-2 control-label">New Name</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="name" name='name' value='{{ $type->name }}'>
+                <input type="text" class="form-control" id="name" name='name' value='{{ $type->name }}' required>
             </div>
             <div class="col-lg-10 col-lg-offset-2">
                 {{ csrf_field() }}

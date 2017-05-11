@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Folk Tune Library</title>
+    <title>Tune Assembly</title>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/slate/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/a4.css') }}"/>
 </head>
 <body>
 
-    <h1>Folk Tune Library</h1>
+    <h1>Tune assembly</h1>
 
     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">

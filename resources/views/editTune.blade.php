@@ -4,9 +4,9 @@
     <fieldset>
         <legend>Edit</legend>
         <div class="form-group">
-            <label for="name" class="col-lg-2 control-label">Name</label>
+            <label for="name" class="col-lg-2 control-label">Name*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="name" name="name" value="{{ $tune->name }}">
+                <input type="text" class="form-control" id="name" name="name" value="{{ $tune->name }}" required>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group">
-            <label for="key" class="col-lg-2 control-label">Key</label>
+            <label for="key" class="col-lg-2 control-label">Key*</label>
             <div class="col-lg-10">
                 <select class="form-control" id="kee" name="kee">
                     @foreach ($kees as $kee)
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label">Mode</label>
+            <label class="col-lg-2 control-label">Mode*</label>
             <div class="col-lg-10">
                 @foreach ($modes as $mode)
                 <div class='radio'>
@@ -63,7 +63,7 @@
         <div class="form-group">
             <label for="resource" class="col-lg-2 control-label">Resource URL</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" name="resource" id="resource" placeholder="http://..." value='{{ $tune->resource }}'>
+                <input type="url" class="form-control" name="resource" id="resource" placeholder="http://..." value='{{ $tune->resource }}'>
             </div>
         </div>
 

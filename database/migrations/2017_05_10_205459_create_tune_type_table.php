@@ -20,8 +20,8 @@ class CreateTuneTypeTable extends Migration
             $table->integer('tune_id')->unsigned();
             $table->integer('type_id')->unsigned();
 
-            $table->foreign('tune_id')->references('id')->on('tunes');
-            $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('tune_id')->references('id')->on('tunes')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
         });
     }
     /**

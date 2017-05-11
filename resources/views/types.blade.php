@@ -18,7 +18,7 @@
         <div class="form-group">
             <label for="name" class="col-lg-2 control-label">Name</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="name" name='name' placeholder="New Type">
+                <input type="text" class="form-control" id="name" name='name' placeholder="New Type" required>
             </div>
             <div class="col-lg-10 col-lg-offset-2">
                 {{ csrf_field() }}

@@ -3,8 +3,8 @@
 
 <!--The Home Page-->
 
-<h3>Hello! Welcome to your personal folk tune library.</h3>
-<p>This application is for folk musicians who want help remembering
+<h3>Hello! Welcome to Tune Assembly.</h3>
+<p>This app is for musicians who want help remembering
     what tunes they know, what types of tunes they are, and what
     keys they are in. You start with an empty tune library,
     you add all the tunes you can remember, then you keep adding
@@ -18,10 +18,9 @@
     Longfellow's Wayside Inn. I like going to Maine Fiddle Camp,
     and I occasionally go to the Irish sessions at the Green Briar
     in Brighton. After many years of learning
-    a few tunes per year, I decided I need a better way to recall
+    a few tunes per year, I decided that I need a better way to recall
     what tunes I know!
 </p>
-<p>TEST</p>
 
 @if ($featuredTune != NULL)
 <h3 class="featured">Featured Tune (random)</h3>

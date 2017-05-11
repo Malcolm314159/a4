@@ -13,7 +13,9 @@ class TypeController extends Controller
         return view('types')->with('types', $types);
     }
     function processNewType(Request $request) {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
         $type = new Type();
         $type->name = $request->input('name');
         $type->save();
@@ -24,7 +26,9 @@ class TypeController extends Controller
         return view('editType')->with('type', $type);
     }
     function processTypeEdits(Request $request) {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
         $type = Type::find($request->input('id'));
         $type->name = $request->input('name');
         $type->save();
