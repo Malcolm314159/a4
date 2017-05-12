@@ -21,6 +21,10 @@
     a few tunes per year, I decided that I need a better way to recall
     what tunes I know!
 </p>
+<p>Thank you Professor Buck, Evan, Katy, and everyone for
+    making this a great course!. I really enjoyed it.
+</p>
+<p>- Malcolm</p>
 
 @if ($featuredTune != NULL)
 <h3 class="featured">Featured Tune (random)</h3>
