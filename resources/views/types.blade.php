@@ -8,7 +8,8 @@
             These types will be an important classification system
             for your tunes! </p>
         @else
-        <p>Click to edit</p>
+        <p>These cannot be deleted, but they can be edited.</p>
+        <p>Click to edit.</p>
         <ul>
         @foreach ($types as $type)
             <li><a href='edittype/{{ $type->id }}'>{{ $type->name }}</a></li>
