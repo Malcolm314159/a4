@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 @if (count($types) === 0)
-<p><a href='/types'>Create some tune types</a> before adding tunes.</p>
+<p><a href='/types'>Create some tune types before adding tunes.</a></p>
 @else
 <form class="form-horizontal well bs-component" method='post' action='/processNewTune'>
     <fieldset>

@@ -15,7 +15,7 @@
         <li><a href="{{$tune->resource}}" target="_blank">
             External Resource</a></li>
         @endif
-        <li><a href='/delete/{{ $tune->id }}'>Delete</a></li>
         <li><a href='/edit/{{ $tune->id }}'>Edit</a></li>
+        <li><a href='/delete/{{ $tune->id }}'>Delete</a></li>
     </ul>
 </li>

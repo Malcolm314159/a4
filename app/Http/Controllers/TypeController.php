@@ -12,19 +12,23 @@ class TypeController extends Controller
         $types = Type::all();
         return view('types')->with('types', $types);
     }
+
     function processNewType(Request $request) {
         $this->validate($request, [
             'name' => 'required'
         ]);
+
         $type = new Type();
         $type->name = $request->input('name');
         $type->save();
         return \Redirect::to('types');
     }
+
     function editType($id) {
         $type = Type::find($id);
         return view('editType')->with('type', $type);
     }
+
     function processTypeEdits(Request $request) {
         $this->validate($request, [
             'name' => 'required'

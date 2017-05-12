@@ -8,9 +8,13 @@ use App\Type;
 
 class TuneController extends Controller
 {
+    # Variables for music data.
     private $kees;
     private $modes;
 
+    # Here is an array of all the keys in music
+    # and an array of many of the modes in music.
+    # I use them throughout this controller.
     public function __construct() {
         $this->kees = [
             'A','B','C','D','E','F','G',
@@ -30,11 +34,10 @@ class TuneController extends Controller
         $tunes = Tune::all();
         return view('tunes')->with('tunes', $tunes);
     }
-    function tuneNames() {
-        $tunes = Tune::all();
-        return view('tuneNames')->with('tunes', $tunes);
-    }
+
     function addtune() {
+
+        # Need the types, keys, and modes to create the form.
         $types = Type::all();
         $kees = $this->kees;
         $modes = $this->modes;
@@ -44,10 +47,12 @@ class TuneController extends Controller
         ->with('kees', $kees)
         ->with('modes', $modes);
     }
+
     function processNewTune(Request $request) {
         $this->validate($request, [
             'name' => 'required'
         ]);
+
         $tune = new Tune();
         $tune->name = $request->input('name');
         $tune->kee = $request->input('kee');
@@ -61,12 +66,14 @@ class TuneController extends Controller
 
         return view('messages.tuneAdded');
     }
+
     function edit($id) {
         $tune = Tune::find($id);
         if (!$tune) {
             return view('messages.tuneNotFound');
         }
         else {
+            # Need the types, keys, and modes to create the form.
             $types = Type::all();
             $kees = $this->kees;
             $modes = $this->modes;
@@ -78,10 +85,12 @@ class TuneController extends Controller
             ->with('modes', $modes);
         }
     }
+
     function processTuneEdits(Request $request) {
         $this->validate($request, [
             'name' => 'required'
         ]);
+
         $tune = Tune::find($request->input('id'));
         $tune->name = $request->input('name');
         $tune->kee = $request->input('kee');
@@ -94,6 +103,7 @@ class TuneController extends Controller
 
         return view('messages.tuneUpdated');
     }
+
     function processTuneDeletion($id) {
         $tune = Tune::find($id);
         if (!$tune) {
@@ -103,5 +113,17 @@ class TuneController extends Controller
             $tune->delete();
             return view('messages.tuneDeleted');
         }
+    }
+
+    # A function for getting tunes by key.
+    function tunesByKey($key) {
+        $tunes = Tune::where('kee', '=', $key)->get();
+        return view('tunes')->with('tunes', $tunes);
+    }
+
+    # A function for getting tunes by mode.
+    function tunesByMode($mode) {
+        $tunes = Tune::where('mode', '=', $mode)->get();
+        return view('tunes')->with('tunes', $tunes);
     }
 }
