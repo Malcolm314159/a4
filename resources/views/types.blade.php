@@ -2,7 +2,7 @@
 @section('content')
 <form class="form-horizontal well bs-component" method='post' action='/processNewType'>
     <fieldset>
-        <legend>Types</legend>
+        <h3>Types</h3>
         @if (count($types) == 0)
         <p>Create your first song type using the form below.
             These types will be an important classification system

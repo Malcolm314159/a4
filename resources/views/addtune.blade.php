@@ -5,7 +5,7 @@
 @else
 <form class="form-horizontal well bs-component" method='post' action='/processNewTune'>
     <fieldset>
-        <legend>Add Tune</legend>
+        <h3>Add Tune</h3>
         <div class="form-group">
             <label for="name" class="col-lg-2 control-label">Name*</label>
             <div class="col-lg-10">
@@ -14,13 +14,13 @@
         </div>
 
         <div class="form-group">
-            <label for="type" class="col-lg-2 control-label">Type</label>
+            <label class="col-lg-2 control-label">Type</label>
             <div class="col-lg-10">
                 @foreach ($types as $type)
                 <div class='checkbox'>
                     <label>
                         <input type='checkbox' value='{{ $type->id }}' id='type_{{ $type->id }}' name='types[]'>
-                        {{ $type->name }}</input>
+                        {{ $type->name }}
                     </label>
                 </div>
                 @endforeach
@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group">
-            <label for="key" class="col-lg-2 control-label">Key*</label>
+            <label class="col-lg-2 control-label">Key*</label>
             <div class="col-lg-10">
                 <select class="form-control" id="kee" name="kee">
                     @foreach ($kees as $kee)
@@ -44,8 +44,7 @@
                 @foreach ($modes as $mode)
                 <div class='radio'>
                     <label>
-                        <input type='radio' name='mode'
-                        id='mode' value='{{$mode}}'
+                        <input type='radio' name='mode' value='{{$mode}}'
                         @if ($mode == 'Major')
                         checked
                         @endif
